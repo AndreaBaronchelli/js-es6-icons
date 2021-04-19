@@ -106,9 +106,21 @@ const select = document.querySelector("#type");
 const types = getTypes(icons);
 const coloredIcons = colorIcons(icons, types, colors);
 
+// Stampare icone b/w
 // printIcons(container, icons);
+
+// Stampare icone colorate
 printIcons(container, coloredIcons);
+
+// Stampare options per il select
 getOptions(select, coloredIcons);
+
+// Filtrare icone
+select.addEventListener("change", () => {
+    const option = select.value;
+    const filteredIcons = filterIcons(coloredIcons, option);
+    printIcons(container, filteredIcons);
+})
 
 /****************************************************************
  * FUNCTIONS
@@ -169,6 +181,18 @@ function getOptions(select, icons) {
         html += `<option value="${type}">${type}</option>`;
     });
     select.innerHTML += html;
-
 };
 
+/**
+ * Filtrare icone per tipo
+*/
+
+function filterIcons(icons, option) {
+    if(option === "all") {
+        return icons;
+    }
+    const filteredIcons = icons.filter((icon) => {
+        return icon.type === option
+    });
+    return filteredIcons;
+};
