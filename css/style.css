@@ -1,0 +1,11 @@
+/* GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #004643;
+    color: #e8e4e6;
+}
