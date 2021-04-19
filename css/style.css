@@ -9,3 +9,89 @@ body {
     background: #004643;
     color: #e8e4e6;
 }
+
+/* SECTIONS */
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+.main-header {
+    padding: 10px 20px;
+    color: #fffffe;
+    font-size: 36px;
+}
+
+/* SEARH */
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    color: #001e1d;
+    background: #abd1c6;
+}
+
+.wrap-select {
+    position: relative;
+}
+
+.wrap-select::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-25%);
+    right: 10px;
+    border-top: 7px solid #abd1c6;
+    border-bottom: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+}
+
+.search label {
+    font-size: 22px;
+    margin-right: 20px;
+}
+
+.search #type {
+    appearance: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #abd1c6;
+    background: #001e1d;
+    cursor: pointer;
+    text-transform: uppercase;
+    
+}
+
+/* ICONS */
+.icons {
+    display: flex;
+    flex-grow: 1;
+    padding: 20px 20px 0 0;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    background: #fffffe;
+}
+
+.icon {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    padding: 30px 20px;
+    border-radius: 10px;
+    width: calc(100% / 4 - 20px);
+    box-shadow: 3px 3px 5px #001e1d;
+    text-align: center;
+    background:#001e1d;
+}
+
+.icon i {
+    font-size: 35px;
+}
+
+.icon .name {
+    margin-top: 10px;
+    text-transform: uppercase;
+}
