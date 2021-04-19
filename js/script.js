@@ -102,12 +102,13 @@ const icons = [
 ];
 const colors = ["#f9bc60", "#abd1c6", "#e16162"];
 const container = document.querySelector(".icons");
+const select = document.querySelector("#type");
 const types = getTypes(icons);
 const coloredIcons = colorIcons(icons, types, colors);
 
 // printIcons(container, icons);
 printIcons(container, coloredIcons);
-
+getOptions(select, coloredIcons);
 
 /****************************************************************
  * FUNCTIONS
@@ -115,7 +116,7 @@ printIcons(container, coloredIcons);
 
 /** 
  * Stampare icone in html
- */
+*/
 function printIcons (container, icons) {
     let html = "";
     icons.forEach((icon) => {
@@ -132,7 +133,7 @@ function printIcons (container, icons) {
 
 /** 
  * Ricavare i type delle icons
- */
+*/
 function getTypes(icons) {
     const types = [];
     icons.forEach((icon) => {
@@ -157,5 +158,17 @@ function colorIcons(icons, types, colors) {
     return coloredIcons;
 };
 
+/**
+ * Creare e stampare options per select
+*/
 
+function getOptions(select, icons) {
+    const types = getTypes(icons);
+    let html = "";
+    types.forEach( (type) => {
+        html += `<option value="${type}">${type}</option>`;
+    });
+    select.innerHTML += html;
+
+};
 
